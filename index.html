@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#122d30">
+  <meta name="description" content="An interactive power systems lab for symmetrical components, unbalanced loads and fault networks.">
+  <title>Phasor Lab · Unbalanced systems &amp; fault calculation</title>
+  <link rel="icon" href="./mark.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./style.css">
+  <script defer src="./plot.js"></script>
+  <script defer src="./sequence.js"></script>
+  <script defer src="./load.js"></script>
+  <script defer src="./fault.js"></script>
+  <script defer src="./app.js"></script>
+</head>
+<body>
+  <a class="skip" href="#workbench">Skip to experiment</a>
+  <header class="mast">
+    <div class="wrap topbar">
+      <div class="identity"><img src="./mark.svg" width="32" height="32" alt=""><span>Phasor Lab</span></div>
+      <span class="course">Power System Fundamentals</span>
+    </div>
+  </header>
+  <main>
+    <div class="wrap title-line">
+      <h1>Unbalanced systems <span class="amp">&amp;</span> fault calculation</h1>
+    </div>
+    <div class="nav-line">
+      <div class="wrap tabs" role="tablist" aria-label="Experiments">
+        <button type="button" role="tab" id="sequence-tab" aria-controls="sequence-panel" aria-selected="true" data-target="sequence"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10.5 13.5 19 6m-4 .4L19 6l-.5 4M10.5 13.5l-6 4m.7-3.3-.7 3.3 3.5-.1M10.5 13.5l2.2 5.8"/><circle cx="10.5" cy="13.5" r="1.5"/></svg>Sequence components</button>
+        <button type="button" role="tab" id="load-tab" aria-controls="load-panel" aria-selected="false" tabindex="-1" data-target="load"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h15M4 12h15M4 18h15M6.5 6v12"/><circle cx="18" cy="6" r="1.5"/><circle cx="18" cy="12" r="1.5"/><circle cx="18" cy="18" r="1.5"/></svg>Three-phase load</button>
+        <button type="button" role="tab" id="fault-tab" aria-controls="fault-panel" aria-selected="false" tabindex="-1" data-target="fault"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m14.2 2.5-9 11h6.1l-1.6 8 9.3-12h-6.1z"/></svg>Fault networks</button>
+      </div>
+    </div>
+    <div class="wrap workspace" id="workbench">
+      <section id="sequence-panel" role="tabpanel" aria-labelledby="sequence-tab"></section>
+      <section id="load-panel" role="tabpanel" aria-labelledby="load-tab" hidden></section>
+      <section id="fault-panel" role="tabpanel" aria-labelledby="fault-tab" hidden></section>
+      <noscript>Enable JavaScript to calculate and drag the phasors.</noscript>
+    </div>
+  </main>
+</body>
+</html>
